@@ -6,7 +6,6 @@ class SongsController < ApplicationController
 
 	def create
 		@song = Song.new(song_params(:title, :released, :genre, :release_year, :artist_name))
-		
 		if @song.valid?
 			@song.save
 			redirect_to song_path(@song)
